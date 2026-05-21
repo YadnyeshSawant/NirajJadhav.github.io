@@ -10,25 +10,24 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Email</h4>
             <p>
-              <a href="mailto:rajeshchittyal21@gmail.com" data-cursor="disable">
-                rajeshchittyal21@gmail.com
+              <a href="mailto:jadhavniraj002@gmail.com" data-cursor="disable">
+                jadhavniraj002@gmail.com
+              </a>
+            </p>
+            <h4>Phone</h4>
+            <p>
+              <a href="tel:+91 7972362891" data-cursor="disable">
+                +91 79723 62891
               </a>
             </p>
             <h4>Education</h4>
-            <p>BSc in Computer Science</p>
+            <p>Bachelor of Computer Applications</p>
+            
           </div>
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="https://github.com/raxx21"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Github <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/rajesh-chityal-2a70141b3"
+              href="https://www.linkedin.com/in/niraj-jadhav-301797230/"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -36,15 +35,7 @@ const Contact = () => {
               Linkedin <MdArrowOutward />
             </a>
             <a
-              href="https://x.com/raxx21_official"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Twitter <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.instagram.com/therajeshchityal"
+              href="https://www.instagram.com/niraj_jadhav_dj_nj"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -54,11 +45,8 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Rajesh Chityal</span>
+              Designed and Developed <br /> by <span>Niraj Jadhav</span>
             </h2>
-            <h5>
-              <MdCopyright /> 2025
-            </h5>
           </div>
         </div>
       </div>

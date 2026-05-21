@@ -5,40 +5,35 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "Solid Starters",
-    category: "Low-Code Platform",
-    tools: "Angular, Next.js, NestJS, MongoDB",
-    image: "/images/Solidx.png",
-  },
-  {
-    title: "Radix",
-    category: "E-Commerce",
-    tools: "Angular, Next.js, NestJS, CMS",
-    image: "/images/radix.png",
-  },
-  {
-    title: "Bond Cancellation",
-    category: "Import-Export Automation",
-    tools: "Angular, Next.js, NestJS, Workflows",
-    image: "/images/bond.png",
-  },
-  {
-    title: "Sapphire",
-    category: "CRM Platform",
-    tools: "AngularJS, NestJS, PostgreSQL",
-    image: "/images/sapphire.png",
-  },
-  {
-    title: "Mpro",
-    category: "Insurance Platform",
-    tools: "React.js, Node.js, Microservices",
-    image: "/images/Maxlife.png",
-  },
+    title: "The Legend Hanuman",
+    category: "AI Cinematic Video",
+    tools: "Pixverse, GPT Image2, Gemini, CapCut, Claude",
+    images: [
+      "/images/hanuman.jpeg",
+      "/images/hanuman2.jpeg",
+      "/images/hanuman3.jpeg",
+    ],
+  }
 ];
 
 const Work = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [imageIndices, setImageIndices] = useState<{ [key: number]: number }>({});
+
+  const handleNextImage = (projectIndex: number, maxImages: number) => {
+    setImageIndices((prev) => {
+      const current = prev[projectIndex] || 0;
+      return { ...prev, [projectIndex]: (current + 1) % maxImages };
+    });
+  };
+
+  const handlePrevImage = (projectIndex: number, maxImages: number) => {
+    setImageIndices((prev) => {
+      const current = prev[projectIndex] || 0;
+      return { ...prev, [projectIndex]: current === 0 ? maxImages - 1 : current - 1 };
+    });
+  };
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -114,8 +109,29 @@ const Work = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="carousel-image-wrapper">
-                      <WorkImage image={project.image} alt={project.title} />
+                    <div className="carousel-image-wrapper" style={{ display: "flex", flexDirection: "column" }}>
+                      <WorkImage image={project.images[imageIndices[index] || 0]} alt={project.title} />
+                      {project.images.length > 1 && (
+                        <div className="project-image-nav" style={{ display: "flex", justifyContent: "center", gap: "15px", marginTop: "15px" }}>
+                          <button
+                            onClick={() => handlePrevImage(index, project.images.length)}
+                            data-cursor="disable"
+                            style={{ background: "transparent", border: "1px solid #14b8a6", color: "#14b8a6", borderRadius: "50%", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "all 0.3s ease" }}
+                          >
+                            <MdArrowBack />
+                          </button>
+                          <span style={{ display: "flex", alignItems: "center", color: "#14b8a6", fontSize: "14px", fontWeight: 600 }}>
+                            {(imageIndices[index] || 0) + 1} / {project.images.length}
+                          </span>
+                          <button
+                            onClick={() => handleNextImage(index, project.images.length)}
+                            data-cursor="disable"
+                            style={{ background: "transparent", border: "1px solid #14b8a6", color: "#14b8a6", borderRadius: "50%", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "all 0.3s ease" }}
+                          >
+                            <MdArrowForward />
+                          </button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

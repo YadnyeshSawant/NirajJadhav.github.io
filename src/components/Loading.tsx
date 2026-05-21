@@ -46,24 +46,69 @@ const Loading = ({ percent }: { percent: number }) => {
     <>
       <div className="loading-header">
         <a href="/#" className="loader-title" data-cursor="disable">
-          RC
+          NJ
         </a>
-        <div className={`loaderGame ${clicked && "loader-out"}`}>
-          <div className="loaderGame-container">
-            <div className="loaderGame-in">
-              {[...Array(27)].map((_, index) => (
-                <div className="loaderGame-line" key={index}></div>
-              ))}
-            </div>
-            <div className="loaderGame-ball"></div>
-          </div>
-        </div>
       </div>
       <div className="loading-screen">
+        <style>{`
+          .tom-jerry-running-container {
+            position: absolute;
+            bottom: 12%;
+            left: -150px;
+            z-index: 9999;
+            animation: tom-jerry-run-across 5s linear infinite;
+            transition: opacity 0.5s ease-out;
+            pointer-events: none;
+          }
+          .tom-jerry-running-container img {
+            height: 180px;
+          }
+          .tom-jerry-running-container.loader-out {
+            opacity: 0;
+          }
+          @keyframes tom-jerry-run-across {
+            0% { transform: translateX(0vw); }
+            100% { transform: translateX(120vw); } /* Runs past the edge of the screen */
+          }
+          .loading-marquee {
+            top: 35% !important;
+            color: #000000 !important;
+          }
+          .loading-marquee span::before {
+            background-color: #000000 !important;
+          }
+          .loading-wrap {
+            margin-top: 150px;
+          }
+          .loading-floor {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 9998;
+            transition: opacity 0.5s ease-out;
+            pointer-events: none;
+            line-height: 0;
+          }
+          .loading-floor img {
+            width: 100%;
+            height: 12vh;
+            object-fit: cover;
+          }
+          .loading-floor.loader-out {
+            opacity: 0;
+          }
+        `}</style>
+        <div className={`loading-floor ${clicked ? "loader-out" : ""}`}>
+          <img src="/images/floor.png" alt="Floor" />
+        </div>
+        <div className={`tom-jerry-running-container ${clicked ? "loader-out" : ""}`}>
+          <img src="/images/mario.gif" alt="Mario Running" />
+        </div>
         <div className="loading-marquee">
           <Marquee>
-            <span> Full Stack Developer</span> <span>Software Engineer</span>
-            <span> Full Stack Developer</span> <span>Software Engineer</span>
+            <span> AI Cinematic Artist</span> <span>Lighting and LookDev Artist</span>
+            
           </Marquee>
         </div>
         <div

@@ -8,6 +8,8 @@
   text-rendering: optimizeSpeed;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  text-align: justify;
+  /* font-family: "Calisto MT", serif; */
 }
 @media only screen and (max-width: 1600px) {
   .section-container {

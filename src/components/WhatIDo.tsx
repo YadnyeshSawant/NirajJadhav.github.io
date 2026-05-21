@@ -25,7 +25,29 @@ const WhatIDo = () => {
     };
   }, []);
   return (
-    <div className="whatIDO">
+    <div className="whatIDO" style={{ height: "auto", minHeight: "100vh", paddingBottom: "120px" }}>
+      <style>{`
+        .what-box, .what-box-in, .what-content-in {
+          height: auto !important;
+          max-height: none !important;
+        }
+        .what-content:hover, .what-content.what-content-active {
+          height: auto !important;
+          max-height: 3000px !important;
+        }
+        .what-hidden-content {
+          opacity: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.4s ease-in-out;
+        }
+        .what-content:hover .what-hidden-content, .what-content.what-content-active .what-hidden-content {
+          opacity: 1;
+          max-height: 2000px;
+          margin-top: 15px;
+          padding-bottom: 20px;
+        }
+      `}</style>
       <div className="what-box">
         <h2 className="title">
           W<span className="hat-h2">HAT</span>
@@ -86,23 +108,25 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
 
-            <div className="what-content-in">
-              <h3>FRONTEND</h3>
-              <h4>Building Interactive UIs</h4>
-              <p>
-                Crafting performant, responsive interfaces with modern frameworks.
-                From SPAs to micro-frontends, I deliver pixel-perfect experiences.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">React.js</div>
-                <div className="what-tags">Angular</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">Material UI</div>
-                <div className="what-tags">HTML5</div>
-                <div className="what-tags">CSS3</div>
+            <div className="what-content-in" style={{ paddingBottom: "60px" }}>
+              <h3>UNREAL ENGINE</h3>
+              <h4>Creating Immersive 3D Experiences</h4>
+              <div className="what-hidden-content">
+                <p>
+                  Developing visually stunning, interactive 3D environments and experiences using Unreal Engine.
+                  From concept to deployment, I bring creative visions to life with cutting-edge technology.
+                </p>
+                <h5>Skillset & tools</h5>
+                <div className="what-content-flex">
+                  <div className="what-tags">Unreal Engine</div>
+                  <div className="what-tags">Blueprints</div>
+                  <div className="what-tags">Animation</div>
+                  <div className="what-tags">Gaming</div>
+                  <div className="what-tags">Material Editor</div>
+                  <div className="what-tags">Animation Blueprints</div>
+                  <div className="what-tags">Lighting Setup</div>
+                  <div className="what-tags">Sequencer</div>
+                </div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -125,23 +149,26 @@ const WhatIDo = () => {
               </svg>
             </div>
             <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>BACKEND</h3>
-              <h4>Scalable Server Architecture</h4>
-              <p>
-                Designing robust APIs and microservices. From CMS platforms to
-                complex business logic, I build backends that scale.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">NestJS</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">REST APIs</div>
-                <div className="what-tags">Microservices</div>
-                <div className="what-tags">Python</div>
+            <div className="what-content-in" style={{ paddingBottom: "60px" }}>
+              <h3>AI CINEMATIC ARTIST</h3>
+              <h4>Designing Intelligent Cinematic Experiences</h4>
+              <div className="what-hidden-content">
+                <p>
+                  Using different tools to create cinematic content using AI technologies and Edit them in a way to make them more engaging and immersive. I Create visually stunning cinematic sequences that captivate audiences and enhance storytelling.
+                </p>
+                <h5>Skillset & tools</h5>
+                <div className="what-content-flex">
+                  <div className="what-tags">Pixverse</div>
+                  <div className="what-tags">Seedance2.0</div>
+                  <div className="what-tags">KlingAI</div>
+                  <div className="what-tags">Runway</div>
+                  <div className="what-tags">Pika</div>
+                  <div className="what-tags">Luma Dream Machine</div>
+                  <div className="what-tags">Google Veo</div>
+                  <div className="what-tags">Pika Labs</div>
+                  <div className="what-tags">Sora 2</div>
+                  <div className="what-tags">Claude AI</div>
+                </div>
               </div>
               <div className="what-arrow"></div>
             </div>
