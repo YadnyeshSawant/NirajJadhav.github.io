@@ -5,7 +5,7 @@ import { MdArrowBack, MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 const projects = [
   {
-    title: "The Legend Hanuman",
+    title: "The Legend Of Hanuman",
     category: "AI Cinematic Video",
     tools: "Pixverse, GPT Image2, Gemini, CapCut, Claude",
     "video-link": "https://vimeo.com/1194288172?share=copy&fl=sv&fe=ci",
