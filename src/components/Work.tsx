@@ -1,13 +1,14 @@
 import { useState, useCallback } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import { MdArrowBack, MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 const projects = [
   {
     title: "The Legend Hanuman",
     category: "AI Cinematic Video",
     tools: "Pixverse, GPT Image2, Gemini, CapCut, Claude",
+    "video-link": "https://vimeo.com/1194288172?share=copy&fl=sv&fe=ci",
     images: [
       "/images/hanuman.jpeg",
       "/images/hanuman2.jpeg",
@@ -107,6 +108,20 @@ const Work = () => {
                           <span className="tools-label">Tools & Features</span>
                           <p>{project.tools}</p>
                         </div>
+                        
+                        {project["video-link"] && (
+                          <div className="carousel-link" style={{ marginTop: "20px" }}>
+                            <a
+                              href={project["video-link"]}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ display: "inline-flex", alignItems: "center", gap: "5px", color: "#14b8a6", textDecoration: "none", fontWeight: 600, fontSize: "16px", borderBottom: "1px solid #14b8a6", paddingBottom: "2px", transition: "all 0.3s ease" }}
+                              data-cursor="disable"
+                            >
+                              Watch Video <MdArrowOutward />
+                            </a>
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div className="carousel-image-wrapper" style={{ display: "flex", flexDirection: "column" }}>
